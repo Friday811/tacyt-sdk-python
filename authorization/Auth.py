@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import logging
 import time
@@ -6,7 +6,6 @@ import json
 import hashlib
 from authorization.Response import Response
 from tacyt.Version import Version
-import Error
 
 class Auth(object):
 
@@ -248,10 +247,10 @@ class Auth(object):
             conn.close()
             ret = Response(json_string=response_data)
 
-        except Exception, e:
-            print "Exception"
-            print e
-            print repr(e)
+        except Exception as e:
+            print("Exception")
+            print(e)
+            print(repr(e))
             ret = None
 
         return ret
@@ -415,7 +414,7 @@ class Auth(object):
         try:
             import requests
         except Exception:
-            return Response(error=Error.Error({"code":"-1","message":"The Python \"requests\" library was not found. Please, install it before call the upload method."}))
+            return Response(error={"code":"-1","message":"The Python \"requests\" library was not found. Please, install it before call the upload method."})
 
         files = {'file': (file_name, file_stream, 'application/octet-stream')}
         if Auth.API_HTTPS:

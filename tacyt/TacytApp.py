@@ -1,5 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+import sys
+sys.path.insert(0,'..')
 
 from ExternalApiFilterRequest import ExternalApiFilterRequest
 from ExternalApiTagRequest import ExternalApiTagRequest
@@ -220,7 +223,7 @@ class TacytApp(Auth):
 
             return self.http_post_file(self.API_UPLOAD_URL, self.authentication_headers_with_body(self.HTTP_METHOD_POST, self.API_UPLOAD_URL, headers, ""), file_stream, file_name, tagName)
 
-        except Exception, e:
-            print repr(e)
-            return None
+        except Exception as e:
+           print(repr(e))
+           return None
         
