@@ -3,7 +3,7 @@
 
 #### PREREQUISITES ####
 
-* Python 2.7.
+* Python 3.5
 
 * Read API documentation (https://tacyt.elevenpaths.com/help/api).
 
